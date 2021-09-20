@@ -1,30 +1,13 @@
-const tasks = [
-    {
-        id: 1,
-        text: 'Doctors Appointment',
-        day: 'Feb 5th at 2pm',
-        reminder: true,
-    },
-    {
-        id: 2,
-        text: 'Meeting at School',
-        day: 'April 4th at 3pm',
-        reminder: true,
-    },
-    {
-        id: 3,
-        text: 'Food Shopping',
-        day: 'May 6th at 1pm',
-        reminder: false,
-    },
+import Task from './Task';
 
-]
-
-const Tasks = () => {
+const Tasks = ({tasks, onDelete}) => {
+    
     return (
-        <div>
-            
-        </div>
+        <>
+        {tasks.map((task) => (
+            <Task key={task.id} task={task} onDelete={onDelete} />
+        ))}
+        </>
     )
 }
 
